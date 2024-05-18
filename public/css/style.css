@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+.search-section {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+
+.btn-pink {
+    padding: 2px 16px;
+    border-radius: 4px;
+    background-color: #ff4081;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #e73370;
+    color: white;
+}
+
+.books-section .card {
+    /* height: 300px; */
+    /* border: 1px solid red; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.books-section .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.40);
+}
+
+.disc{
+    height: 25px;
+    overflow-y: hidden;
+}
+
+.card-img-top{
+    width: 70%;
+    height: 300px;
+    /* text-align: center; */
+}
+
+footer {
+    border-top: 1px solid #ddd;
+}
+
+/************************************/
+/************************************/
+
+.mainDiv{
+    height: 90vh;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 30px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}

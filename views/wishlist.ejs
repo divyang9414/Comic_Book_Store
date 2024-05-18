@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainDiv">
+        <a href="/" class="d-block text-end mb-2"><button class="btn btn-primary">Home</button></a>
+        <table class="table table-bordered caption-top myTable">
+            <caption>Wishlist of your Comics</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Char Name</th>
+                    <th>Role Name</th>
+                    <th>First Appearance in</th>
+                    <th>Publisher</th>
+                    <th colspan="2" class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <% bookstables.map((data, id)=> { %>
+                    <tr>
+                        <td><%= data.idNum %></td>
+                        <td><%= data.charName %></td>
+                        <td><%= data.roleName %></td>
+                        <td><%= data.firstAppearance %></td>
+                        <td><%= data.publisher %></td>
+                        <td class="p-1"><a href="/editData?id=<%=data._id%>" class="d-inline-block btn btn-warning w-100">Edit</a></td>
+                        <td class="p-1"><a href="/deleteData?id=<%=data._id%>" class="d-inline-block btn btn-danger w-100">Delete</a></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

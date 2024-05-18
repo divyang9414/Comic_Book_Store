@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-light py-3">
+        <div class="container text-center">
+            <h1>BookStore</h1>
+            <nav class="d-inline-block">
+                <a href="javascript:void(0)" class="mx-2"><button class="btn btn-secondary">Home</button></a>
+                <a href="wishlist" class="mx-2"><button class="btn btn-secondary">Wish List</button></a>
+                <a href="javascript:void(0)"  class="mx-2"><button class="btn btn-secondary">Shop</button></a>
+                <a href="javascript:void(0)" class="mx-2"><button class="btn btn-secondary">Contact</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section py-5 text-center">
+        <div class="container">
+            <h2>Find the book <strong>you've been looking for</strong></h2>
+            <form class="d-flex justify-content-center mt-4">
+                <input class="form-control w-50 me-3" type="text" placeholder="Search by book title">
+                <button class="btn-pink ml-2" type="button">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="books-section py-5">
+        <div class="container">
+            <div class="row">
+                <% books.forEach((book) => { %>
+                    <div class="col-md-3 mb-4">
+                        <form action="/insertData" method="post">
+                            <div class="card"> 
+                                <img src="<%= book.images.lg %>" class="card-img-top" alt="<%= book.name %>">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= book.name || 'Anonymous' %></h5>
+                                    <p class="mb-1 card-text"><%= book.biography.fullName || 'Anonymous' %></p>
+                                    <p class="mb-1 card-text disc"><%= book.biography.firstAppearance || 'Anonymous' %></p>
+                                    <p class="mb-1 card-text"><%= book.biography.publisher || 'Anonymous' %></p>
+                                    
+                                    <input type="number" value="<%= book.id %>" name="idNum" hidden>
+                                    <input type="hidden" value="<%= book.images.lg %>" name="image" placeholder="imageURL">
+                                    <input type="hidden" value="<%= book.name %>" name="charName" placeholder="charName">
+                                    <input type="hidden" value="<%= book.biography.fullName %>" name="roleName" placeholder="roleName">
+                                    <input type="hidden" value="<%= book.biography.firstAppearance %>" name="firstAppearance" placeholder="firstAppearance">
+                                    <input type="hidden" value="<%= book.biography.publisher %>" name="publisher" placeholder="publisher">
+                                    <input type="submit" value="Add to Wish List..❤️" class="btn btn-warning d-inline">
+                                </div>
+                            </div>
+                        </form>
+                    </div>                    
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light py-4 text-center">
+        <div class="container">
+            <address>
+                435 Tresdale Road, Entertainment District, Fictional City, XA 27402
+            </address>
+        </div>
+    </footer>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
